@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ProfilePic from "@/public/profilepicture.jpg"
+import FadeInContent from './components/FadeInContent'
 
 export default function Home() {
   return (
@@ -10,10 +11,11 @@ export default function Home() {
         </h1>
       </div>
       <div className="items-center space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+      <FadeInContent>
         <div className="flex flex-col items-center pt-8">
           <Image alt="Profile Picture" src={ProfilePic} className="h-48 w-48 rounded-full object-cover object-top" />
           <h3 className="pt-4 pb-2 text-center text-2xl font-bold leading-8 tracking-tight">
-            Ng Yuan Da Elson<br/>吴沅达
+            Ng Yuan Da Elson<br />吴沅达
           </h3>
           <p>Freelance App/Software Developer</p>
 
@@ -47,22 +49,25 @@ export default function Home() {
             </a>
           </div>
         </div>
+        </FadeInContent>
 
 
         {/* From typography plugin */}
         <div className="prose max-w-none prose-lg pt-8 pb-7 dark:prose-invert xl:col-span-2">
-          <p>
-            Hi! I&apos;m Elson, a software enthusiast with an eye for design. I am always looking for the &quot;next big thing&quot; as I live and breathe tech, trying out new technologies that can revolutionize the industry standard. I would love to be your go-to man when it comes to web and app development.
-          </p>
-          <div className="flex items-center justify-center lg:justify-start mt-10">
-            <div className="flex items-center absolute mt-1 p-6 font-medium h-7 bg-white border-teal-400 border-x-2 border-y-2 text-teal-500 dark:bg-black dark:text-neutral-100 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+          <FadeInContent>
+            <p>
+              Hi! I&apos;m Elson, a software enthusiast with an eye for design. I am always looking for the &quot;next big thing&quot; as I live and breathe tech, trying out new technologies that can revolutionize the industry standard. I would love to be your go-to man when it comes to web and app development.
+            </p>
+            <div className="flex items-center justify-center lg:justify-start mt-12 mb-20 xl:mb-0">
+              <div className="flex items-center absolute mt-1 p-6 font-medium h-7 bg-white border-teal-400 border-x-2 border-y-2 text-teal-500 dark:bg-black dark:text-neutral-100 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
 
-              <div className="ml-2">Available for Hire</div>
+                <div className="ml-2">Available for Hire</div>
+              </div>
             </div>
-          </div>
+          </FadeInContent>
         </div>
 
 

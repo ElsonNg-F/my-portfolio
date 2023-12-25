@@ -18,7 +18,7 @@ export default function FadeInContent({children, delayOffset=0.0}) {
     const controls = useAnimationControls();
 
     const FadeInTransition =
-    { duration: 0.4, delay: 0.10 + delayOffset}
+    { duration: 0.5, delay: 0.05 + delayOffset}
 
     useEffect(() => {
         if (isInView)
