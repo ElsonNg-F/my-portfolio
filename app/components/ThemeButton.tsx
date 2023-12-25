@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 
-// Server-side rendering -> Runs on the server, hydrates on the client
+// Client component but Server-side rendering -> Runs on the server, hydrates on the client
 export default function ThemeButton() {
 
     const { setTheme, resolvedTheme } = useTheme()

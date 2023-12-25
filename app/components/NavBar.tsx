@@ -19,7 +19,7 @@ export default function NavBar() {
                                 <div className="flex justify-between w-full">
                                     <div className="flex items-center">
                                         <Link href="/"><h1 className="text-2xl font-medium">
-                                            Elson <span className="text-teal-500"> Ng</span></h1></Link>
+                                            elson<span className="text-teal-500">ng.</span></h1></Link>
                                     </div>
 
                                     <div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-center">
@@ -31,9 +31,6 @@ export default function NavBar() {
                                         </Link>
                                         <Link href="/projects" prefetch className={`${pathName == "/projects" ? 'border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}`}>
                                             Projects
-                                        </Link>
-                                        <Link href="/guestbook" prefetch className={`${pathName == "/guestbook" ? 'border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'}`}>
-                                            Notes
                                         </Link>
                                         <ThemeButton />
                                     </div>
@@ -69,9 +66,6 @@ export default function NavBar() {
                                 </Link>
                                 <Link href="/projects" prefetch className={`${pathName == "/projects" ? "bg-teal-50 border-teal500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800" : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"}`}>
                                     Projects
-                                </Link>
-                                <Link href="/guestbook" prefetch className={`${pathName == "/guestbook" ? "bg-teal-50 border-teal500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800" : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"}`}>
-                                    Notes
                                 </Link>
                             </div>
                         </Disclosure.Panel>

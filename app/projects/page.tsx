@@ -1,7 +1,7 @@
 import { client } from "../lib/sanity";
 import Image from "next/image";
 
-interface Data {
+interface ProjectData {
     title: string,
     overview: string,
     link: string,
@@ -25,12 +25,12 @@ async function getProjects() {
 
 export default async function Projects() {
 
-    const data : Data[] = await getProjects();
+    const data : ProjectData[] = await getProjects();
 
     return (
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
             <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">All Projects</h1>
+                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">My Projects</h1>
             </div>
             <div className="grid gap-y-8 sm:grid-col-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
                {data.map((project) => (
