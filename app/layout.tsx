@@ -4,7 +4,7 @@ import './globals.css'
 import NavBar from './components/NavBar'
 import { Provider } from './components/Provider'
 import Footer from './components/Footer'
-import ScrollToTopButton from './components/ScrollToTopButton'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   title: 'Elson Ng - Software Engineer',
   description: 'Portfolio',
 }
+
+
 
 export default function RootLayout({
   children,

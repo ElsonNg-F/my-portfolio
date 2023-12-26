@@ -2,8 +2,31 @@ import Image from 'next/image'
 import ProfilePic from "@/public/profilepicture.jpg"
 import FadeInContent from './components/FadeInContent'
 import Gallery from './components/Gallery';
+import { client } from './lib/sanity'
 
-export default function Home() {
+export const revalidate = 1;
+interface InfoData {
+  property: string,
+  info: string,
+}
+
+
+async function getInfo() {
+  const query = `
+  *[_type == "info" && property=="welcome"] {
+      property,
+      info,
+      _id,
+  }`;
+  const data = await client.fetch(query, { next: { revalidate } });
+  return data;
+}
+
+
+export default async function Home() {
+
+  const info: InfoData[] = await getInfo();
+
   return (
     <div className="overflow-hidden align-center items-center">
       {/* <div className="space-y-2 pt-5 pb-8 md:space-x-5">
@@ -26,8 +49,9 @@ export default function Home() {
         {/* From typography plugin */}
         <div className="flex justify-center w-fit prose max-w-none prose-lg mt-6 pb-7 dark:prose-invert xl:col-span-0">
           <FadeInContent>
-            <div className="p-4 rounded-xl bg-gray-100 dark:bg-teal-950 dark:text-white">
-              Currently open to new opportunities!🔥
+            <div className="p-4 mx-4 rounded-xl bg-gray-100 dark:bg-teal-950 dark:text-white text-center">
+              {/* Currently open to new opportunities!🔥 */}
+              {info.find(i => i.property.toLowerCase() == "welcome").info}
             </div>
             {/* <p>
               Hi! I&apos;m Elson, a software enthusiast with an eye for design. I am always looking for the &quot;next big thing&quot; as I live and breathe tech, trying out new technologies that can revolutionize the industry standard. I would love to be your go-to man when it comes to web and app development.

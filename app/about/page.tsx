@@ -84,7 +84,7 @@ async function getEducation() {
 
 async function getInfo() {
     const query = `
-    *[_type == "info"] {
+    *[_type == "info" && property=="background"] {
         property,
         info,
         _id,

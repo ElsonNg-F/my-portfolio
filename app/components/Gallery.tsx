@@ -31,7 +31,7 @@ export default function Gallery() {
     )
 
     return (
-        <div className="mx-auto w-1/2">
+        <div className="mx-auto w-full xl:w-1/2 ">
             <div ref={sliderRef} className="keen-slider h-24">
                 <div className="keen-slider__slide flex justify-center items-center"><SiCplusplus className="w-8 h-8 drop-shadow-2xl shadow-black" /></div>
                 <div className="keen-slider__slide flex justify-center items-center"><SiCsharp className="w-8 h-8 drop-shadow-2xl shadow-black" /></div>
