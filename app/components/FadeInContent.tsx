@@ -4,14 +4,18 @@ import { Variants, motion, useAnimationControls, useInView, useScroll } from "fr
 import { useEffect, useRef } from "react";
 
 
-const FadeInVariants: Variants = {
+const FadeIn: Variants = {
     hide: { opacity: 0, y: 75 },
     show: { opacity: 1, y: 0 },
 };
 
+const FadeInNoMoveY: Variants = {
+    hide: { opacity: 0, y: 0 },
+    show: { opacity: 1, y: 0 },
+};
 
 
-export default function FadeInContent({children, delayOffset=0.0}) {
+export default function FadeInContent({children, delayOffset=0.0, moveY=true}) {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -29,7 +33,7 @@ export default function FadeInContent({children, delayOffset=0.0}) {
         <div className="">
             <motion.div
                 ref={ref}
-                variants={FadeInVariants}
+                variants={moveY ? FadeIn : FadeInNoMoveY}
                 animate={controls}
                 initial="hide"
                 transition={FadeInTransition}>

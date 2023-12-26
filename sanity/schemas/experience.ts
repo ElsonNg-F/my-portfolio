@@ -22,7 +22,7 @@ export default {
             name: 'yearend',
             type: 'date',
             title: 'Year End',
-            hidden: ({ parent, value }) => parent?.present
+            hidden: ({ parent }) => parent?.present
         },
         {
             name: 'present',

@@ -1,6 +1,8 @@
 import { client } from "../lib/sanity";
 import Image from "next/image";
 
+const revalidate = 1;
+
 interface ProjectData {
     title: string,
     overview: string,
@@ -19,7 +21,7 @@ async function getProjects() {
         "imageUrl": image.asset->url
       }`;
 
-    const data = await client.fetch(query);
+    const data = await client.fetch(query, { next: { revalidate } });
     return data;
 }
 
@@ -30,9 +32,12 @@ export default async function Projects() {
     return (
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
             <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">My Projects</h1>
+                <h1 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-4xl md:leading-13">Projects</h1>
             </div>
-            <div className="grid gap-y-8 sm:grid-col-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
+            <div>
+            <p className="mt-4 text-normal">Stay tuned.</p>
+            </div>
+            {/* <div className="grid gap-y-8 sm:grid-col-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
                {data.map((project) => (
                 <article key={project._id} className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-teal-900 shadow-black-100">
                     <div className="h-56 w-full relative">
@@ -57,7 +62,7 @@ export default async function Projects() {
                     </div>
                 </article>
                ))}
-            </div>
+            </div> */}
         </div>
     )
 }

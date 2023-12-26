@@ -1,6 +1,6 @@
 export default {
-    name: 'education',
-    title: 'Education',
+    name: 'work',
+    title: 'Work',
     type: 'document',
     fields: [
         {
@@ -19,40 +19,37 @@ export default {
             title: 'Description',
         },
         {
-            name: 'yearstart',
+            name: 'date',
             type: 'date',
-            title: 'Year Start',
+            title: 'Date',
         },
         {
-            name: 'yearend',
-            type: 'date',
-            title: 'Year End',
-            hidden: ({ parent }) => parent?.present
-        },
-        {
-            name: 'present',
-            type: 'boolean',
-            title: 'Present',
-        },
-        {
-            name: 'tags',
+            name: 'category',
             type: 'array',
             of: [{
                 type: "string"
             }
             ],
-            title: "Tags",
+            title: "Category",
         },
         {
-            name: 'image',
-            type: 'image',
-            title: 'Image',
+            name: 'images',
+            type: 'array',
+            of: [{
+                type: "image"
+            }
+            ],
+            title: "Image(s)"
         },
         {
             name: 'link',
             type: 'string',
-            title: "Link",
+            title: "Page Link",
         },
-
+        {
+            name: 'videolink',
+            type: 'string',
+            title: "Video Link",
+        }
     ]
 }

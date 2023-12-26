@@ -51,7 +51,7 @@ export default async function Home() {
           <FadeInContent>
             <div className="p-4 mx-4 rounded-xl bg-gray-100 dark:bg-teal-950 dark:text-white text-center">
               {/* Currently open to new opportunities!🔥 */}
-              {info.find(i => i.property.toLowerCase() == "welcome").info}
+              {info.find(i => i?.property.toLowerCase() == "welcome")?.info}
             </div>
             {/* <p>
               Hi! I&apos;m Elson, a software enthusiast with an eye for design. I am always looking for the &quot;next big thing&quot; as I live and breathe tech, trying out new technologies that can revolutionize the industry standard. I would love to be your go-to man when it comes to web and app development.

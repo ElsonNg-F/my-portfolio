@@ -58,8 +58,6 @@ async function getExperience() {
         "imageUrl": image.asset->url
       }`;
     const data = await client.fetch(query, { next: { revalidate } });
-    console.log(data);
-
     return data;
 }
 
@@ -100,7 +98,6 @@ export default async function About() {
     const info: InfoData[] = await getInfo();
 
     return (
-        <div>
         <div className="divide-y divide-gray-100 dark:divide-gray-700">
             <div className="space-y-2 pt-5 pb-8 md:space-x-5">
                 <h1 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-4xl md:leading-13">
@@ -157,7 +154,7 @@ export default async function About() {
                     </h3> */}
                     <FadeInContent>
                         <p className="leading-7 tracking-tight">
-                            {info.find(i => i.property.toLowerCase() == "background").info}
+                            {info?.find(i => i.property.toLowerCase() == "background")?.info}
                         </p>
                     </FadeInContent>
 
@@ -179,8 +176,6 @@ export default async function About() {
                 </article>
                     
             </div>
-        </div>
-        <ScrollToTopButton/>
         </div>
     )
 }
