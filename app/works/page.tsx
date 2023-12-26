@@ -18,7 +18,6 @@ async function getWorks() {
       }`;
 
     const data = await client.fetch(query, {next : {revalidate}});
-    console.log(data);
     return data;
 }
 
@@ -26,7 +25,6 @@ async function getWorks() {
 export default async function Works() {
 
     const data = await getWorks();
-
 
     return (
         <div className="divide-y divide-gray-100 dark:divide-gray-700">
@@ -37,8 +35,8 @@ export default async function Works() {
             </div>
 
             <div className="grid gap-y-8 sm:grid-col-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 lg:gap-4 pt-8">
-                {data.map((work: WorkData) =>
-                    WorkListing(work)
+                {data.map((work: WorkData, index) =>
+                    WorkListing(work, index)
                 )}
             </div>
         </div>)

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeInContent from "./FadeInContent";
 
 export interface WorkData {
     title: string,
@@ -14,9 +15,10 @@ export interface WorkData {
 }
 
 
-export default function WorkListing(work: WorkData) {
+export default function WorkListing(work: WorkData, index) {
     return (
         <Link key={work._id} href={work.link} target="_blank">
+            <FadeInContent delayOffset={index * 0.05}>
             <article className="group overflow-hidden dark:border-zinc-600 rounded-xl border border-gray-100 bg-white shadow-lg  dark:bg-black dark:shadow-teal-950 shadow-black-100">
                 <div className="h-32 w-full relative bg-white">
                     <Image fill src={work.imageUrls[0]} alt="Project Image" className="w-full h-full object-cover" />
@@ -46,6 +48,7 @@ export default function WorkListing(work: WorkData) {
                     </p>
                 </div>
             </article>
+            </FadeInContent>
         </Link>
     )
 }

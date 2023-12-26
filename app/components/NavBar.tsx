@@ -67,6 +67,9 @@ export default function NavBar() {
                                 <Link href="/about" prefetch className={`${pathName == "/about" ? "bg-teal-50 border-teal500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800" : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"}`}>
                                     About
                                 </Link>
+                                <Link href="/works" prefetch className={`${pathName == "/works" ? "bg-teal-50 border-teal500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800" : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"}`}>
+                                    Works
+                                </Link>
                                 <Link href="/projects" prefetch className={`${pathName == "/projects" ? "bg-teal-50 border-teal500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800" : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"}`}>
                                     Projects
                                 </Link>
