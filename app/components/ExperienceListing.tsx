@@ -34,11 +34,11 @@ export default async function ExperienceListing(data: ExperienceData, index) {
                     {date}
                 </div>
                 <div className="xl:basis-5/6">
-                    <div className="flex flex-row items-center space-x-2">
-                        <div className="text-lg font-semibold text-teal-500 dark:text-teal-400 align-top">{data.title}</div>
+                    <div className="flex flex-row items-center space-x-2 mr-4">
+                        <div className="text-normal xl:text-lg font-semibold text-teal-500 dark:text-teal-400 align-top">{data.title}</div>
                         {
                             data.link == null ? <div /> : <div className="align-text-bottom">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-2 h-2 group-hover:w-4 group-hover:h-4 group-hover:transform group-hover:duration-250 transition-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 xl:w-2 xl:h-2 xl:group-hover:w-4 xl:group-hover:h-4 xl:group-hover:transform xl:group-hover:duration-250 transition-all">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>
 

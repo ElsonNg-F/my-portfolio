@@ -7,6 +7,7 @@ import type { ExperienceData } from "../components/ExperienceListing";
 import EducationListing from "../components/EducationListing";
 import type { EducationData } from "../components/EducationListing";
 import FadeInContent from "../components/FadeInContent";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 interface InfoData {
     property: string,
@@ -99,6 +100,7 @@ export default async function About() {
     const info: InfoData[] = await getInfo();
 
     return (
+        <div>
         <div className="divide-y divide-gray-100 dark:divide-gray-700">
             <div className="space-y-2 pt-5 pb-8 md:space-x-5">
                 <h1 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-4xl md:leading-13">
@@ -111,7 +113,7 @@ export default async function About() {
                     <div className="flex flex-col items-center pt-8">
                         <Image alt="Profile Picture" src={ProfilePic} className="h-36 w-36 rounded-full object-cover object-top" />
                         <h3 className="pt-4 pb-2 text-center text-xl font-bold leading-8 tracking-tight">
-                            Ng Yuan Da Elson<br />吴沅达
+                            Ng Yuan Da Elson<br />
                         </h3>
                         <p>Freelance App/Software Developer</p>
 
@@ -175,8 +177,10 @@ export default async function About() {
 
                     {education.map((data, index) => EducationListing(data, index))}
                 </article>
-
+                    
             </div>
+        </div>
+        <ScrollToTopButton/>
         </div>
     )
 }
