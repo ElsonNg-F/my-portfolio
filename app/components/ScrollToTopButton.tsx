@@ -28,13 +28,13 @@ export default function ScrollToTopButton() {
             console.log(latestValue);
             if (latestValue > 0.5) {
                 controls.start('show');
-            } else {
+            } else {    
                 controls.start('hide');
             }
         });
     });
 
-    return (<motion.button type="button" className="group fixed bottom-0 right-0 p-10 opacity-0" variants={ScrollToTopContainerVariants} animate={controls} onClick={scrollToTop}
+    return (<motion.button type="button" className="group fixed bottom-0 right-0 p-10 opacity-0 z-50" variants={ScrollToTopContainerVariants} animate={controls} onClick={scrollToTop}
         transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }} initial="hide">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />

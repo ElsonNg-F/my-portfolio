@@ -70,7 +70,9 @@ export default async function Home() {
         </div>
       </div>
       <FadeInContent>
-        <Gallery />
+        <div className="mb-8">
+          <Gallery />
+        </div>
       </FadeInContent>
     </div>
 

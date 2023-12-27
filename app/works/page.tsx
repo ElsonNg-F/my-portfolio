@@ -34,7 +34,7 @@ export default async function Works() {
                 </h1>
             </div>
 
-            <div className="grid gap-y-8 sm:grid-col-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 lg:gap-4 pt-8">
+            <div className="grid gap-y-8 sm:grid-col-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 lg:gap-4 pt-8 pb-8">
                 {data.map((work: WorkData, index) =>
                     WorkListing(work, index)
                 )}
