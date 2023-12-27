@@ -27,7 +27,6 @@ async function getProjects() {
 
 export default async function Projects() {
 
-    const data : ProjectData[] = await getProjects();
 
     return (
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
