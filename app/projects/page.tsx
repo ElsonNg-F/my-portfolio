@@ -1,7 +1,7 @@
 import { client } from "../lib/sanity";
 import Image from "next/image";
 
-const revalidate = 1;
+export const revalidate = 1;
 
 interface ProjectData {
     title: string,
